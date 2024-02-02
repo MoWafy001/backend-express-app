@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 export class EnvValue {
   constructor(public value: string | number | boolean) {}
 

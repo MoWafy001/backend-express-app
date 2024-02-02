@@ -14,7 +14,7 @@ export const validateRequest = <T>(
   if (errors.length > 0) {
     errors = formatValidationErrors(errors);
 
-    throw new HttpError(400, {
+    throw new HttpError(422, {
       errors: errors,
     });
   }

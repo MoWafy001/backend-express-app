@@ -1,4 +1,4 @@
-import { Env } from "./env";
+import { Env } from "../lib/env/env";
 import dotenv from "dotenv";
 dotenv.config();
 

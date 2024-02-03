@@ -12,6 +12,7 @@ import { UpdateAdminRequest } from "../requests/update-admin.request";
 import { AdminGuardMiddleware } from "../../auth/guards/admin-auth-guard";
 import { Role } from "../../../../common/enums/role.enum";
 import { ControllerMiddleware } from "../../../../lib/decorators/controller-middleware.decorator";
+import { parsePaginationQuery } from "../../../../helpers/parse-pagiantion-query";
 
 @ControllerPrefix("/console/admins")
 @ControllerMiddleware(AdminGuardMiddleware({ roles: [Role.SUPER_ADMIN] }))
@@ -37,10 +38,10 @@ export class AdminsControllers extends BaseController {
   };
 
   list = async (req: Request, res: Response) => {
-    const data = await this.adminsService.findMany({
-      take: req.query.take && parseInt(req.query.take as string),
-      skip: req.query.skip && parseInt(req.query.skip as string),
-    });
+    const data = await this.adminsService.findMany(
+      parsePaginationQuery(req.query)
+    );
+
     const response = new JsonResponse({
       data: serialize(data.data, AdminSerialization),
       meta: {

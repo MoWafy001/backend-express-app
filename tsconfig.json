@@ -7,12 +7,12 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@lib/*": ["./lib/*"],
-      "@common/*": ["common/*"],
-      "@configs/*": ["./configs/*"],
-      "@helpers/*": ["helpers/*"],
+      "@lib/*": ["src/lib/*"],
+      "@common/*": ["src/common/*"],
+      "@configs/*": ["src/configs/*"],
+      "@helpers/*": ["src/helpers/*"],
     }
   },
   "include": ["src/**/*.ts"],

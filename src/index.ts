@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import { config } from "@configs/config";
 import { setAppRoutes } from "./routes";
-import { loggerMiddleware } from "middlewares/logger.middleware";
+import { loggerMiddleware } from "./middlewares/logger.middleware";
 
 const main = async () => {
   // set up express server

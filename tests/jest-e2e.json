@@ -1,0 +1,15 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": "../",
+  "testRegex": ".e2e.test.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "^src/(.*)$": "<rootDir>/src/$1",
+    "^@lib/(.*)$": "<rootDir>/src/lib/$1",
+    "^@common/(.*)$": "<rootDir>/src/common/$1",
+    "^@configs/(.*)$": "<rootDir>/src/configs/$1",
+    "^@helpers/(.*)$": "<rootDir>/src/helpers/$1"
+  }
+}

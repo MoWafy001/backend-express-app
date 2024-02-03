@@ -11,7 +11,7 @@ import { ControllerMiddleware } from "@lib/decorators/controller-middleware.deco
 import { parsePaginationQuery } from "@helpers/pagination";
 import { UsersService } from "../services/users.service";
 import { UserSerialization } from "@common/serializers/user.serialization";
-import { AdminGuardMiddleware } from "modules/console/common/guards/admin-auth-guard";
+import { AdminGuardMiddleware } from "src/modules/console/common/guards/admin-auth-guard";
 
 @ControllerPrefix("/console/users")
 @ControllerMiddleware(AdminGuardMiddleware())

@@ -5,8 +5,8 @@ import { Prisma } from "@prisma/client";
 import { HttpError } from "@lib/error-handling/http-error";
 import { validateHash } from "@lib/password/passwords";
 import { config } from "@configs/config";
-import { prisma } from "database/prisma";
 import { RegisterRequest } from "../requests/register.request";
+import { prisma } from "src/database/prisma";
 
 export class AuthService {
   async login(loginRequest: LoginRequest) {

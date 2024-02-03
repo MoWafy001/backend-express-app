@@ -36,10 +36,18 @@ export class AdminsControllers extends BaseController {
     return res.json(response);
   };
 
-  list = async (_req: Request, res: Response) => {
-    const admins = await this.adminsService.findMany();
+  list = async (req: Request, res: Response) => {
+    const data = await this.adminsService.findMany({
+      take: req.query.take && parseInt(req.query.take as string),
+      skip: req.query.skip && parseInt(req.query.skip as string),
+    });
     const response = new JsonResponse({
-      data: serialize(admins, AdminSerialization),
+      data: serialize(data.data, AdminSerialization),
+      meta: {
+        total: data.total,
+        page: data.page,
+        perPage: data.perPage,
+      },
     });
 
     return res.json(response);

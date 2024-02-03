@@ -12,10 +12,21 @@ export class AdminsService {
     });
   }
 
-  async findMany(options?: Prisma.AdminCreateInput) {
-    return prisma.admin.findMany({
-      where: options,
+  async findMany(options: Prisma.AdminFindManyArgs = {}) {
+    options.take = options.take || 10;
+    options.skip = options.skip || 0;
+
+    const data = await prisma.admin.findMany(options);
+    const total = await prisma.admin.count({
+      where: options.where,
     });
+
+    return {
+      data,
+      total,
+      perPage: Math.min(options.take, total),
+      page: Math.floor(options.skip / options.take) + 1,
+    };
   }
 
   async findFirst(options?: Prisma.AdminWhereInput) {

@@ -19,7 +19,7 @@ export class AuthController extends BaseController {
   }
 
   login = async (req: Request, res: Response) => {
-    const loginRequest = validateRequest(LoginRequest, req.body);
+    const loginRequest = await validateRequest(LoginRequest, req.body);
     const data = await this.loginService.login(loginRequest);
     const response = new JsonResponse({
       data: serialize(data.admin, AdminSerialization),

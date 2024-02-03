@@ -10,6 +10,12 @@ export class UserSerialization {
   @Expose({ name: "email" })
   email: string;
 
+  @Expose({ name: "mobile" })
+  mobile: string;
+
+  @Expose({ name: "country" })
+  country: string;
+
   @Expose({ name: "createdAt" })
   createdAt: Date;
 

@@ -17,10 +17,11 @@ export class AuthController extends BaseController {
 
   public setRoutes(): void {
     this.router.post("/login", asyncHandler(this.login));
+    this.router.post("/register", asyncHandler(this.register));
   }
 
   login = async (req: Request, res: Response) => {
-    const loginRequest = validateRequest(LoginRequest, req.body);
+    const loginRequest = await validateRequest(LoginRequest, req.body);
     const data = await this.auth.login(loginRequest);
     const response = new JsonResponse({
       data: serialize(data.user, UserSerialization),
@@ -35,7 +36,7 @@ export class AuthController extends BaseController {
   };
 
   register = async (req: Request, res: Response) => {
-    const registerRequest = validateRequest(RegisterRequest, req.body);
+    const registerRequest = await validateRequest(RegisterRequest, req.body);
     const data = await this.auth.register(registerRequest);
     const response = new JsonResponse({
       data: serialize(data.user, UserSerialization),

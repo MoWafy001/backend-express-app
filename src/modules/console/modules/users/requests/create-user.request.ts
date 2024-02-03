@@ -1,5 +1,7 @@
+import { IsCountry } from "@common/validations/is-country.validation";
 import {
   IsEmail,
+  IsMobilePhone,
   IsNotEmpty,
   IsString,
 } from "class-validator";
@@ -15,4 +17,10 @@ export class CreateUserRequest {
   @IsString()
   @IsNotEmpty()
   password: string;
+
+  @IsMobilePhone()
+  mobile: string;
+
+  @IsCountry()
+  country: string;
 }

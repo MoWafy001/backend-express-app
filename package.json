@@ -7,7 +7,12 @@
     "start": "tsc && node dist/index.js",
     "start:dev": "NODE_ENV=development nodemon src/index.ts",
     "start:prod": "node dist/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "db:seed": "prisma db seed",
+    "db:reset": "prisma migrate reset"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "keywords": [],
   "author": "",

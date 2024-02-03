@@ -55,8 +55,8 @@ export class AdminsControllers extends BaseController {
   };
 
   get = async (req: Request, res: Response) => {
-    const adminId = req.params.userId;
-    const admin = await this.adminsService.findFirst({ uuid: adminId });
+    const adminId = req.params.adminId;
+    const admin = await this.adminsService.findFirstOrThrow({ uuid: adminId });
     const response = new JsonResponse({
       data: serialize(admin, AdminSerialization),
     });
@@ -79,8 +79,8 @@ export class AdminsControllers extends BaseController {
   };
 
   delete = async (req: Request, res: Response) => {
-    const adminId = req.params.userId;
-    const admin = await this.adminsService.findFirst({
+    const adminId = req.params.adminId;
+    const admin = await this.adminsService.findFirstOrThrow({
       uuid: adminId,
     });
     await this.adminsService.delete({ id: admin.id });

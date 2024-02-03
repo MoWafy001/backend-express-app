@@ -29,8 +29,8 @@ export class AdminsService {
     };
   }
 
-  async findFirst(options?: Prisma.AdminWhereInput) {
-    return prisma.admin.findFirst({
+  async findFirstOrThrow(options?: Prisma.AdminWhereInput) {
+    return prisma.admin.findFirstOrThrow({
       where: options,
     });
   }

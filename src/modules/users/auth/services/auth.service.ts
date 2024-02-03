@@ -3,7 +3,7 @@ import { LoginRequest } from "../requests/login.request";
 import { sign } from "jsonwebtoken";
 import { Prisma } from "@prisma/client";
 import { HttpError } from "@lib/error-handling/http-error";
-import { validateHash } from "@lib/password/passwords";
+import { hashPassword, validateHash } from "@lib/password/passwords";
 import { config } from "@configs/config";
 import { RegisterRequest } from "../requests/register.request";
 import { prisma } from "src/database/prisma";
@@ -26,6 +26,9 @@ export class AuthService {
   }
 
   async register(registerRequest: RegisterRequest) {
+    registerRequest.password =
+      registerRequest.password && hashPassword(registerRequest.password);
+
     const user = await prisma.user.create({
       data: registerRequest,
     });

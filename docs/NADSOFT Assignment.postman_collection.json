@@ -1,0 +1,1495 @@
+{
+	"info": {
+		"_postman_id": "66cb5b79-b644-4a16-ba8d-f8a717924537",
+		"name": "NADSOFT Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14948364"
+	},
+	"item": [
+		{
+			"name": "console",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"super@app.com\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/v1/console/auth/login",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"console",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"super@app.com\",\n    \"password\": \"password\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server}}/api/v1/console/auth/login",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"console",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM1OWFkMmJhLWUyMzQtNDFjMi1iMmQyLWU5MjY1ZWJkNTg5ZiIsImVtYWlsIjoic3VwZXJAYXBwLmNvbSIsIm5hbWUiOiJTdXBlciBBZG1pbiIsInR5cGUiOiJhZG1pbiIsInJvbGUiOiJzdXBlckFkbWluIiwiaWF0IjoxNzA2OTUzMTU0LCJleHAiOjE3MDcwMzk1NTR9.XYtVpABQzZEbc7GLSPgRnANWkRauzsKjcXIlZvMWgYs; Path=/; HttpOnly; SameSite=Strict"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "230"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e6-LJ5MWVCAvdq83jpZIIcgz5WGsGE\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:39:14 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"c59ad2ba-e234-41c2-b2d2-e9265ebd589f\",\n        \"name\": \"Super Admin\",\n        \"email\": \"super@app.com\",\n        \"role\": \"superAdmin\",\n        \"createdAt\": \"2024-02-03T09:38:46.584Z\",\n        \"updatedAt\": \"2024-02-03T09:38:46.584Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "admins",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New User\",\n    \"email\": \"newUser@app.com\",\n    \"password\": \"password\",\n    \"role\": \"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/v1/console/admins",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"console",
+										"admins"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "create",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"New User\",\n    \"email\": \"newUser@app.com\",\n    \"password\": \"password\",\n    \"role\": \"admin\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server}}/api/v1/console/admins",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"console",
+												"admins"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "224"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e0-S5rBsBsvEb2DWoWJmKbH7pU7WGw\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:43:13 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"5152e28c-ce51-449b-9430-a825f8a8e127\",\n        \"name\": \"New User\",\n        \"email\": \"newUser@app.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2024-02-03T09:43:13.744Z\",\n        \"updatedAt\": \"2024-02-03T09:43:13.744Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/v1/console/admins?take=1&skip=1",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"console",
+										"admins"
+									],
+									"query": [
+										{
+											"key": "take",
+											"value": "1"
+										},
+										{
+											"key": "skip",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "list",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{server}}/api/v1/console/admins?take=1&skip=1",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"console",
+												"admins"
+											],
+											"query": [
+												{
+													"key": "take",
+													"value": "1"
+												},
+												{
+													"key": "skip",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "266"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"10a-RUK8hMeLiTgcGSHZ4wYS7lLVV8w\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:43:42 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": \"5152e28c-ce51-449b-9430-a825f8a8e127\",\n            \"name\": \"New User\",\n            \"email\": \"newUser@app.com\",\n            \"role\": \"admin\",\n            \"createdAt\": \"2024-02-03T09:43:13.744Z\",\n            \"updatedAt\": \"2024-02-03T09:43:13.744Z\"\n        }\n    ],\n    \"meta\": {\n        \"total\": 2,\n        \"page\": 2,\n        \"perPage\": 1\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "get one",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/v1/console/admins/:adminId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"console",
+										"admins",
+										":adminId"
+									],
+									"variable": [
+										{
+											"key": "adminId",
+											"value": "5152e28c-ce51-449b-9430-a825f8a8e127"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get one",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{server}}/api/v1/console/admins/:adminId",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"console",
+												"admins",
+												":adminId"
+											],
+											"variable": [
+												{
+													"key": "adminId",
+													"value": "5152e28c-ce51-449b-9430-a825f8a8e127"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "224"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e0-S5rBsBsvEb2DWoWJmKbH7pU7WGw\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:46:19 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"5152e28c-ce51-449b-9430-a825f8a8e127\",\n        \"name\": \"New User\",\n        \"email\": \"newUser@app.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2024-02-03T09:43:13.744Z\",\n        \"updatedAt\": \"2024-02-03T09:43:13.744Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Updated Admin\"\n    // \"email\": \"newUser@app.com\",\n    // \"password\": \"password\",\n    // \"mobile\": \"12345678911\",\n    // \"birthDate\": \"1820-12-12\",\n    // \"country\": \"Wakanda\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/v1/console/admins/:adminId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"console",
+										"admins",
+										":adminId"
+									],
+									"variable": [
+										{
+											"key": "adminId",
+											"value": "5152e28c-ce51-449b-9430-a825f8a8e127"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "update",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Updated Admin\"\n    // \"email\": \"newUser@app.com\",\n    // \"password\": \"password\",\n    // \"mobile\": \"12345678911\",\n    // \"birthDate\": \"1820-12-12\",\n    // \"country\": \"Wakanda\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server}}/api/v1/console/admins/:adminId",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"console",
+												"admins",
+												":adminId"
+											],
+											"variable": [
+												{
+													"key": "adminId",
+													"value": "5152e28c-ce51-449b-9430-a825f8a8e127"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "229"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e5-4iK6Vzf0ELk2RGZNj3GL/Yw4BSo\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:46:37 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"5152e28c-ce51-449b-9430-a825f8a8e127\",\n        \"name\": \"Updated Admin\",\n        \"email\": \"newUser@app.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2024-02-03T09:43:13.744Z\",\n        \"updatedAt\": \"2024-02-03T09:46:37.398Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Updated User\"\n    // \"email\": \"newUser@app.com\",\n    // \"password\": \"password\",\n    // \"mobile\": \"12345678911\",\n    // \"birthDate\": \"1820-12-12\",\n    // \"country\": \"Wakanda\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/v1/console/admins/:adminId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"console",
+										"admins",
+										":adminId"
+									],
+									"variable": [
+										{
+											"key": "adminId",
+											"value": "5152e28c-ce51-449b-9430-a825f8a8e127"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete User",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Updated User\"\n    // \"email\": \"newUser@app.com\",\n    // \"password\": \"password\",\n    // \"mobile\": \"12345678911\",\n    // \"birthDate\": \"1820-12-12\",\n    // \"country\": \"Wakanda\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server}}/api/v1/console/admins/:adminId",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"console",
+												"admins",
+												":adminId"
+											],
+											"variable": [
+												{
+													"key": "adminId",
+													"value": "5152e28c-ce51-449b-9430-a825f8a8e127"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "229"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e5-4iK6Vzf0ELk2RGZNj3GL/Yw4BSo\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:46:49 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"5152e28c-ce51-449b-9430-a825f8a8e127\",\n        \"name\": \"Updated Admin\",\n        \"email\": \"newUser@app.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2024-02-03T09:43:13.744Z\",\n        \"updatedAt\": \"2024-02-03T09:46:37.398Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Ancient Fellow\",\n    \"email\": \"fellow@app.com\",\n    \"password\": \"password\",\n    \"mobile\": \"+201127813978\",\n    \"dateOfBirth\": \"1820-02-03T09:48:39.251Z\",\n    \"country\": \"qatar\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/v1/console/users",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"console",
+										"users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "validation error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"New User\",\n    \"email\": \"newUser@app.com\",\n    \"password\": \"password\"\n    // \"mobile\": \"+201127813978\",\n    // \"birthDate\": \"1820-12-12\",\n    // \"country\": \"qatar\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server}}/api/v1/console/users",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"console",
+												"users"
+											]
+										}
+									},
+									"status": "Unprocessable Entity",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "188"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"bc-X0qpsIq5rMtp/jg39qSdSck/Wi4\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:46:56 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 422,\n    \"message\": {\n        \"errors\": [\n            {\n                \"mobile\": [\n                    \"mobile must be a phone number\"\n                ]\n            },\n            {\n                \"country\": [\n                    \"Country is not valid\"\n                ]\n            },\n            {\n                \"dateOfBirth\": [\n                    \"dateOfBirth must be a valid ISO 8601 date string\"\n                ]\n            }\n        ]\n    }\n}"
+								},
+								{
+									"name": "create",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Ancient Fellow\",\n    \"email\": \"fellow@app.com\",\n    \"password\": \"password\",\n    \"mobile\": \"+201127813978\",\n    \"dateOfBirth\": \"1820-02-03T09:48:39.251Z\",\n    \"country\": \"qatar\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server}}/api/v1/console/users",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"console",
+												"users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "267"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"10b-RgdO2EsyEd4fcXRnnSOC6waB+d8\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:50:41 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"dc7e747d-7377-4481-95b5-c272c6cfc3e4\",\n        \"name\": \"Ancient Fellow\",\n        \"email\": \"fellow@app.com\",\n        \"mobile\": \"+201127813978\",\n        \"country\": \"qatar\",\n        \"age\": 204,\n        \"createdAt\": \"2024-02-03T09:50:41.836Z\",\n        \"updatedAt\": \"2024-02-03T09:50:41.836Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/v1/console/users",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"console",
+										"users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "list",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{server}}/api/v1/console/users",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"console",
+												"users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1529"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"5f9-lTEfoXaOILYb8tPveXR3fFAgC6o\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:50:52 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": \"202cd712-dc60-4e0d-a9a0-3da41ab6ed33\",\n            \"name\": \"Meghan Batz\",\n            \"email\": \"Foster.Cronin11@hotmail.com\",\n            \"mobile\": \"1-726-552-3748\",\n            \"country\": \"Cote d'Ivoire\",\n            \"age\": 18,\n            \"createdAt\": \"2024-02-03T09:42:42.773Z\",\n            \"updatedAt\": \"2024-02-03T09:42:42.773Z\"\n        },\n        {\n            \"id\": \"24d3ea3d-7406-4cc9-9a33-2c1119173e2e\",\n            \"name\": \"Elijah Lesch\",\n            \"email\": \"Daryl.Ankunding56@yahoo.com\",\n            \"mobile\": \"553-624-3876 x677\",\n            \"country\": \"Burkina Faso\",\n            \"age\": 24,\n            \"createdAt\": \"2024-02-03T09:42:42.851Z\",\n            \"updatedAt\": \"2024-02-03T09:42:42.851Z\"\n        },\n        {\n            \"id\": \"1552db9d-15c9-4996-b232-c396eb5e8a9f\",\n            \"name\": \"Dr. Jay Spencer\",\n            \"email\": \"Saige.Ledner@gmail.com\",\n            \"mobile\": \"304-417-3329 x294\",\n            \"country\": \"Mozambique\",\n            \"age\": 31,\n            \"createdAt\": \"2024-02-03T09:42:42.938Z\",\n            \"updatedAt\": \"2024-02-03T09:42:42.938Z\"\n        },\n        {\n            \"id\": \"b8d916e0-969b-42c6-851a-99b6b79da43c\",\n            \"name\": \"Dr. Willie Blick\",\n            \"email\": \"Raphael_Cummerata@hotmail.com\",\n            \"mobile\": \"1-388-902-5113 x1465\",\n            \"country\": \"Austria\",\n            \"age\": 17,\n            \"createdAt\": \"2024-02-03T09:42:43.018Z\",\n            \"updatedAt\": \"2024-02-03T09:42:43.018Z\"\n        },\n        {\n            \"id\": \"e42f8229-2e5f-4348-9d00-868899512777\",\n            \"name\": \"Julia Runte\",\n            \"email\": \"Mervin_Kreiger87@gmail.com\",\n            \"mobile\": \"1-266-615-2659\",\n            \"country\": \"China\",\n            \"age\": 49,\n            \"createdAt\": \"2024-02-03T09:42:43.096Z\",\n            \"updatedAt\": \"2024-02-03T09:42:43.096Z\"\n        },\n        {\n            \"id\": \"dc7e747d-7377-4481-95b5-c272c6cfc3e4\",\n            \"name\": \"Ancient Fellow\",\n            \"email\": \"fellow@app.com\",\n            \"mobile\": \"+201127813978\",\n            \"country\": \"qatar\",\n            \"age\": 204,\n            \"createdAt\": \"2024-02-03T09:50:41.836Z\",\n            \"updatedAt\": \"2024-02-03T09:50:41.836Z\"\n        }\n    ],\n    \"meta\": {\n        \"total\": 6,\n        \"page\": 1,\n        \"perPage\": 6\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "get one",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/v1/console/users/:userId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"console",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "202cd712-dc60-4e0d-a9a0-3da41ab6ed33"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get one",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{server}}/api/v1/console/users/:userId",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"console",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "202cd712-dc60-4e0d-a9a0-3da41ab6ed33"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "285"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"11d-4iHLEbzFafirJlbFcdtlFtxYNwE\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:51:06 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"202cd712-dc60-4e0d-a9a0-3da41ab6ed33\",\n        \"name\": \"Meghan Batz\",\n        \"email\": \"Foster.Cronin11@hotmail.com\",\n        \"mobile\": \"1-726-552-3748\",\n        \"country\": \"Cote d'Ivoire\",\n        \"age\": 18,\n        \"createdAt\": \"2024-02-03T09:42:42.773Z\",\n        \"updatedAt\": \"2024-02-03T09:42:42.773Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Updated User\"\n    // \"email\": \"newUser@app.com\",\n    // \"password\": \"password\",\n    // \"mobile\": \"12345678911\",\n    // \"birthDate\": \"1820-12-12\",\n    // \"country\": \"Wakanda\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/v1/console/users/:userId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"console",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "202cd712-dc60-4e0d-a9a0-3da41ab6ed33"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "update",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Updated User\"\n    // \"email\": \"newUser@app.com\",\n    // \"password\": \"password\",\n    // \"mobile\": \"12345678911\",\n    // \"birthDate\": \"1820-12-12\",\n    // \"country\": \"Wakanda\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server}}/api/v1/console/users/:userId",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"console",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "202cd712-dc60-4e0d-a9a0-3da41ab6ed33"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "286"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"11e-MuffdMqfK5gjLg6Nq02akcIXxMo\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:51:17 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"202cd712-dc60-4e0d-a9a0-3da41ab6ed33\",\n        \"name\": \"Updated User\",\n        \"email\": \"Foster.Cronin11@hotmail.com\",\n        \"mobile\": \"1-726-552-3748\",\n        \"country\": \"Cote d'Ivoire\",\n        \"age\": 18,\n        \"createdAt\": \"2024-02-03T09:42:42.773Z\",\n        \"updatedAt\": \"2024-02-03T09:51:17.244Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Updated User\"\n    // \"email\": \"newUser@app.com\",\n    // \"password\": \"password\",\n    // \"mobile\": \"12345678911\",\n    // \"birthDate\": \"1820-12-12\",\n    // \"country\": \"Wakanda\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/v1/console/users/:userId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"console",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "202cd712-dc60-4e0d-a9a0-3da41ab6ed33"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete User",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Updated User\"\n    // \"email\": \"newUser@app.com\",\n    // \"password\": \"password\",\n    // \"mobile\": \"12345678911\",\n    // \"birthDate\": \"1820-12-12\",\n    // \"country\": \"Wakanda\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server}}/api/v1/console/users/:userId",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"console",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "202cd712-dc60-4e0d-a9a0-3da41ab6ed33"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "286"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"11e-MuffdMqfK5gjLg6Nq02akcIXxMo\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:51:28 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"202cd712-dc60-4e0d-a9a0-3da41ab6ed33\",\n        \"name\": \"Updated User\",\n        \"email\": \"Foster.Cronin11@hotmail.com\",\n        \"mobile\": \"1-726-552-3748\",\n        \"country\": \"Cote d'Ivoire\",\n        \"age\": 18,\n        \"createdAt\": \"2024-02-03T09:42:42.773Z\",\n        \"updatedAt\": \"2024-02-03T09:51:17.244Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"za guy\",\n    \"email\": \"Nicholaus.Lynch@hotmail.com\",\n    \"mobile\": \"+201127813231\",\n    \"password\": \"password\",\n    \"dateOfBirth\": \"1820-02-03T09:48:39.251Z\",\n    \"country\": \"egypt\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/v1/users/auth/register",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "register",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"za guy\",\n    \"email\": \"Nicholaus.Lynch@hotmail.com\",\n    \"mobile\": \"+201127813231\",\n    \"password\": \"password\",\n    \"dateOfBirth\": \"1820-02-03T09:48:39.251Z\",\n    \"country\": \"egypt\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server}}/api/v1/users/auth/register",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users",
+												"auth",
+												"register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwYjJjYmRiLWVjYjgtNGZiNy1iYjdjLWQyMzk2YjdkYzI1MCIsImVtYWlsIjoiTmljaG9sYXVzLkx5bmNoQGhvdG1haWwuY29tIiwibmFtZSI6InphIGd1eSIsInR5cGUiOiJ1c2VyIiwiaWF0IjoxNzA2OTUzOTY5LCJleHAiOjE3MDcwNDAzNjl9.hQ4n8fg0_-4-9ZyyGTarO8S-hQZ9bjyLa29UqLBnPhc; Path=/; HttpOnly; SameSite=Strict"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "272"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"110-+P3FahntAH7U19flSDukA00TsOY\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:52:49 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"30b2cbdb-ecb8-4fb7-bb7c-d2396b7dc250\",\n        \"name\": \"za guy\",\n        \"email\": \"Nicholaus.Lynch@hotmail.com\",\n        \"mobile\": \"+201127813231\",\n        \"country\": \"egypt\",\n        \"age\": 204,\n        \"createdAt\": \"2024-02-03T09:52:49.522Z\",\n        \"updatedAt\": \"2024-02-03T09:52:49.522Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"Nicholaus.Lynch@hotmail.com\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/v1/users/auth/login",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"Nicholaus.Lynch@hotmail.com\",\n    \"password\": \"password\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server}}/api/v1/users/auth/login",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg4MzAxMmViLTdjZDktNGZhYS04MjIyLTNmNDQ5Mzg3M2RiNCIsImVtYWlsIjoiTmljaG9sYXVzLkx5bmNoQGhvdG1haWwuY29tIiwibmFtZSI6InphIGd1eSIsInR5cGUiOiJ1c2VyIiwiaWF0IjoxNzA2OTU0MTc0LCJleHAiOjE3MDcwNDA1NzR9.9cm6Sbrhxv9XudtnKIuQOaof6kqjC0QDSkXomPv5Gr4; Path=/; HttpOnly; SameSite=Strict"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "272"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"110-KRwfXNp2v68YaAtY9tG/6wOm8IU\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Feb 2024 09:56:14 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"883012eb-7cd9-4faa-8222-3f4493873db4\",\n        \"name\": \"za guy\",\n        \"email\": \"Nicholaus.Lynch@hotmail.com\",\n        \"mobile\": \"+201127813231\",\n        \"country\": \"egypt\",\n        \"age\": 204,\n        \"createdAt\": \"2024-02-03T09:56:07.813Z\",\n        \"updatedAt\": \"2024-02-03T09:56:07.813Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/api/v1/health",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "health",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/v1/health",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"health"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35-Y4MvVLq1TZH2o2D6mX+VuX61mnQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Feb 2024 09:56:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Server is up!\",\n    \"code\": 200\n}"
+				}
+			]
+		}
+	]
+}

@@ -29,8 +29,8 @@ export class UsersService {
     };
   }
 
-  async findFirst(options?: Prisma.UserWhereInput) {
-    return prisma.user.findFirst({
+  async findFirstOrThrow(options?: Prisma.UserWhereInput) {
+    return prisma.user.findFirstOrThrow({
       where: options,
     });
   }

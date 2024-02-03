@@ -55,7 +55,7 @@ export class UsersControllers extends BaseController {
 
   get = async (req: Request, res: Response) => {
     const userId = req.params.userId;
-    const user = await this.usersService.findFirst({ uuid: userId });
+    const user = await this.usersService.findFirstOrThrow({ uuid: userId });
     const response = new JsonResponse({
       data: serialize(user, UserSerialization),
     });
@@ -79,7 +79,7 @@ export class UsersControllers extends BaseController {
 
   delete = async (req: Request, res: Response) => {
     const userId = req.params.userId;
-    const user = await this.usersService.findFirst({
+    const user = await this.usersService.findFirstOrThrow({
       uuid: userId,
     });
     await this.usersService.delete({ id: user.id });

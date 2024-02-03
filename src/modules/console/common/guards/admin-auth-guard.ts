@@ -1,10 +1,10 @@
 import { JwtPayload, verify } from "jsonwebtoken";
 import { Request } from "express";
-import { IJwtLoginPayload } from "../../../../common/interfaces/jwt-login-payload.interface";
-import { getCook } from "../../../../helpers/cookie";
-import { Role } from "../../../../common/enums/role.enum";
-import { HttpError } from "../../../../lib/error-handling/http-error";
-import { config } from "../../../../configs/config";
+import { IJwtLoginPayload } from "@common/interfaces/jwt-login-payload.interface";
+import { getCook } from "@helpers/cookie";
+import { Role } from "@common/enums/role.enum";
+import { HttpError } from "@lib/error-handling/http-error";
+import { config } from "@configs/config";
 
 type AdminGuardMiddlewareProps = {
   roles?: Role[];

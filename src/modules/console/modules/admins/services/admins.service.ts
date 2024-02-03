@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 import { prisma } from "../../../../../database/prisma";
-import { hashPassword } from "../../../../../lib/password/passwords";
+import { hashPassword } from "@lib/password/passwords";
 
 export class AdminsService {
   async create(attributes: Prisma.AdminCreateInput) {

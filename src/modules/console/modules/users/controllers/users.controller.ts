@@ -1,17 +1,17 @@
 import type { Request, Response } from "express";
-import { BaseController } from "../../../../../lib/controllers/controller.base";
-import { ControllerPrefix } from "../../../../../lib/decorators/prefix.decorator";
-import { validateRequest } from "../../../../../lib/error-handling/validate-request";
-import { asyncHandler } from "../../../../../helpers/async-handler";
-import { serialize } from "../../../../../helpers/serialize";
-import { JsonResponse } from "../../../../../lib/responses/json-response";
+import { BaseController } from "@lib/controllers/controller.base";
+import { ControllerPrefix } from "@lib/decorators/prefix.decorator";
+import { validateRequest } from "@lib/error-handling/validate-request";
+import { asyncHandler } from "@helpers/async-handler";
+import { serialize } from "@helpers/serialize";
+import { JsonResponse } from "@lib/responses/json-response";
 import { CreateUserRequest } from "../requests/create-user.request";
 import { UpdateUserRequest } from "../requests/update-user.request";
-import { ControllerMiddleware } from "../../../../../lib/decorators/controller-middleware.decorator";
-import { parsePaginationQuery } from "../../../../../helpers/parse-pagiantion-query";
+import { ControllerMiddleware } from "@lib/decorators/controller-middleware.decorator";
+import { parsePaginationQuery } from "@helpers/parse-pagiantion-query";
 import { UsersService } from "../services/users.service";
-import { AdminGuardMiddleware } from "../../../common/guards/admin-auth-guard";
-import { UserSerialization } from "../../../../../common/serializers/user.serialization";
+import { UserSerialization } from "@common/serializers/user.serialization";
+import { AdminGuardMiddleware } from "modules/console/common/guards/admin-auth-guard";
 
 @ControllerPrefix("/console/users")
 @ControllerMiddleware(AdminGuardMiddleware())

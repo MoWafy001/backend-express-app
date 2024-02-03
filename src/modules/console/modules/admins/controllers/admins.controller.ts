@@ -1,18 +1,18 @@
 import type { Request, Response } from "express";
 import { AdminsService } from "../services/admins.service";
 import { CreateAdminRequest } from "../requests/create-admin.request";
-import { AdminSerialization } from "../../../common/serializers/admin.serialization";
 import { UpdateAdminRequest } from "../requests/update-admin.request";
-import { AdminGuardMiddleware } from "../../../common/guards/admin-auth-guard";
-import { Role } from "../../../../../common/enums/role.enum";
-import { asyncHandler } from "../../../../../helpers/async-handler";
-import { parsePaginationQuery } from "../../../../../helpers/parse-pagiantion-query";
-import { BaseController } from "../../../../../lib/controllers/controller.base";
-import { ControllerMiddleware } from "../../../../../lib/decorators/controller-middleware.decorator";
-import { ControllerPrefix } from "../../../../../lib/decorators/prefix.decorator";
-import { validateRequest } from "../../../../../lib/error-handling/validate-request";
-import { JsonResponse } from "../../../../../lib/responses/json-response";
-import { serialize } from "../../../../../helpers/serialize";
+import { Role } from "@common/enums/role.enum";
+import { asyncHandler } from "@helpers/async-handler";
+import { parsePaginationQuery } from "@helpers/parse-pagiantion-query";
+import { BaseController } from "@lib/controllers/controller.base";
+import { ControllerMiddleware } from "@lib/decorators/controller-middleware.decorator";
+import { ControllerPrefix } from "@lib/decorators/prefix.decorator";
+import { validateRequest } from "@lib/error-handling/validate-request";
+import { JsonResponse } from "@lib/responses/json-response";
+import { serialize } from "@helpers/serialize";
+import { AdminGuardMiddleware } from "modules/console/common/guards/admin-auth-guard";
+import { AdminSerialization } from "modules/console/common/serializers/admin.serialization";
 
 @ControllerPrefix("/console/admins")
 @ControllerMiddleware(AdminGuardMiddleware({ roles: [Role.SUPER_ADMIN] }))

@@ -4,7 +4,7 @@ import {
   IsNotEmpty,
   IsString,
 } from "class-validator";
-import { Role } from "../../../../../common/enums/role.enum";
+import { Role } from "@common/enums/role.enum";
 
 export class CreateAdminRequest {
   @IsString()

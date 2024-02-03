@@ -1,4 +1,4 @@
-import { Env } from "../lib/env/env";
+import { Env } from "@lib/env/env";
 
 export interface IDbConfig {
   databaseUrl?: string;

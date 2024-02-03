@@ -1,12 +1,12 @@
-import { IJwtLoginPayload } from "../../../../../common/interfaces/jwt-login-payload.interface";
+import { IJwtLoginPayload } from "@common/interfaces/jwt-login-payload.interface";
 import { LoginRequest } from "../requests/login.request";
 import { sign } from "jsonwebtoken";
 import { Prisma } from "@prisma/client";
 import { prisma } from "../../../../../database/prisma";
-import { Role } from "../../../../../common/enums/role.enum";
-import { HttpError } from "../../../../../lib/error-handling/http-error";
-import { validateHash } from "../../../../../lib/password/passwords";
-import { config } from "../../../../../configs/config";
+import { Role } from "@common/enums/role.enum";
+import { HttpError } from "@lib/error-handling/http-error";
+import { validateHash } from "@lib/password/passwords";
+import { config } from "@configs/config";
 
 export class LoginService {
   async login(loginRequest: LoginRequest) {

@@ -1,4 +1,4 @@
-import { Env } from "../lib/env/env";
+import { Env } from "@lib/env/env";
 import { IDbConfig, dbConfig } from "./db.config";
 import { IJwtConfig, jwtConfig } from "./jwt.config";
 

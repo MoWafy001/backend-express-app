@@ -9,6 +9,7 @@
     "emitDecoratorMetadata": true,
     "baseUrl": ".",
     "paths": {
+      "src/*": ["src/*"],
       "@lib/*": ["src/lib/*"],
       "@common/*": ["src/common/*"],
       "@configs/*": ["src/configs/*"],

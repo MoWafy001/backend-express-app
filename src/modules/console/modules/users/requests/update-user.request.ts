@@ -1,3 +1,4 @@
+import { IsCountry } from "@common/validations/is-country.validation";
 import {
   IsEmail,
   IsMobilePhone,
@@ -26,7 +27,6 @@ export class UpdateUserRequest {
   mobile: string;
 
   @IsOptional()
-  @IsString()
-  @IsNotEmpty()
+  @IsCountry()
   country: string;
 }

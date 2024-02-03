@@ -1,17 +1,17 @@
-import type { Request, Response } from "express";
+import { UserSerialization } from "@common/serializers/user.serialization";
+import { asyncHandler } from "@helpers/async-handler";
+import { parsePaginationQuery } from "@helpers/pagination";
+import { serialize } from "@helpers/serialize";
 import { BaseController } from "@lib/controllers/controller.base";
+import { ControllerMiddleware } from "@lib/decorators/controller-middleware.decorator";
 import { ControllerPrefix } from "@lib/decorators/prefix.decorator";
 import { validateRequest } from "@lib/error-handling/validate-request";
-import { asyncHandler } from "@helpers/async-handler";
-import { serialize } from "@helpers/serialize";
 import { JsonResponse } from "@lib/responses/json-response";
-import { CreateUserRequest } from "../requests/create-user.request";
-import { UpdateUserRequest } from "../requests/update-user.request";
-import { ControllerMiddleware } from "@lib/decorators/controller-middleware.decorator";
-import { parsePaginationQuery } from "@helpers/pagination";
-import { UsersService } from "../services/users.service";
-import { UserSerialization } from "@common/serializers/user.serialization";
+import type { Request, Response } from "express";
 import { AdminGuardMiddleware } from "modules/console/common/guards/admin-auth-guard";
+import { CreateUserRequest } from "modules/console/modules/users/requests/create-user.request";
+import { UpdateUserRequest } from "modules/console/modules/users/requests/update-user.request";
+import { UsersService } from "modules/console/modules/users/services/users.service";
 
 @ControllerPrefix("/console/users")
 @ControllerMiddleware(AdminGuardMiddleware())
@@ -27,7 +27,10 @@ export class UsersControllers extends BaseController {
   }
 
   create = async (req: Request, res: Response) => {
-    const createUserRequest = await validateRequest(CreateUserRequest, req.body);
+    const createUserRequest = await validateRequest(
+      CreateUserRequest,
+      req.body
+    );
     const newUser = await this.usersService.create(createUserRequest);
     const response = new JsonResponse({
       data: serialize(newUser, UserSerialization),
@@ -65,7 +68,7 @@ export class UsersControllers extends BaseController {
 
   update = async (req: Request, res: Response) => {
     const userId = req.params.userId;
-    const updateUserRequest = await validateRequest(UpdateUserRequest, req.body);
+    const updateUserRequest = validateRequest(UpdateUserRequest, req.body);
     const user = await this.usersService.update(
       { uuid: userId },
       updateUserRequest

@@ -41,6 +41,7 @@ describe("UsersController", () => {
         password: "password",
         mobile: "+2011278" + Math.floor(Math.random() * 10000),
         country: "Egypt",
+        dateOfBirth: new Date(),
       },
     });
 
@@ -66,6 +67,7 @@ describe("UsersController", () => {
         password: "password",
         mobile: "+201172189" + (Math.floor(Math.random() * 1000)).toString(),
         country: "Egypt",
+        dateOfBirth: new Date(),
       };
 
       // Send a request to create a new user

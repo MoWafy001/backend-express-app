@@ -1,4 +1,4 @@
-import { Expose } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 export class UserSerialization {
   @Expose({ name: "uuid" })
@@ -15,6 +15,10 @@ export class UserSerialization {
 
   @Expose({ name: "country" })
   country: string;
+
+  @Expose({ name: "dateOfBirth" })
+  @Transform(({ value }) => (new Date()).getFullYear() - (new Date(value)).getFullYear())
+  age: number;
 
   @Expose({ name: "createdAt" })
   createdAt: Date;

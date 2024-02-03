@@ -12,6 +12,7 @@ export const usersSeeder = async (prisma: PrismaClient) => {
         password: hashPassword("password"),
         mobile: faker.phone.number(),
         country: faker.location.country(),
+        dateOfBirth: faker.date.past(),
       },
     });
   }

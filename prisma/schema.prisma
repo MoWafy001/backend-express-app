@@ -30,6 +30,7 @@ model User {
   email     String   @unique
   mobile    String   @unique
   country   String
+  dateOfBirth DateTime
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

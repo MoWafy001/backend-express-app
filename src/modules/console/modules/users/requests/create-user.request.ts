@@ -1,5 +1,6 @@
 import { IsCountry } from "@common/validations/is-country.validation";
 import {
+  IsDateString,
   IsEmail,
   IsMobilePhone,
   IsNotEmpty,
@@ -23,4 +24,7 @@ export class CreateUserRequest {
 
   @IsCountry()
   country: string;
+
+  @IsDateString()
+  dateOfBirth: Date;
 }

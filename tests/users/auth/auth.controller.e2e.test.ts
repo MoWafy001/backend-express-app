@@ -7,6 +7,7 @@ import { setAppRoutes } from "../../../src/routes";
 import cors from "cors";
 import { Prisma } from "@prisma/client";
 import { prisma } from "../../../src/database/prisma";
+import { RegisterRequest } from "../../../src/modules/users/auth/requests/register.request";
 
 describe("UsersAuthController", () => {
   let app: Express;
@@ -55,12 +56,13 @@ describe("UsersAuthController", () => {
   describe("POST /users/auth/register", () => {
     it("should register a new user successfully", async () => {
       // Create a new user request
-      const createUserRequest = {
+      const createUserRequest: RegisterRequest = {
         name: "New User",
         email: `newUser${Date.now()}@app.com`,
         password: "password",
         mobile: "+201172189" + Math.floor(Math.random() * 1000),
         country: "Egypt",
+        dateOfBirth: new Date(),
       };
 
       // Send a request to create a new user

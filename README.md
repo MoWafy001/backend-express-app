@@ -99,7 +99,7 @@ npm run test
 
 ## Documentation
 
-The endpoints and responses are included in postman collection in the docs folder.
+The endpoints and responses are included in [postman collection](./docs/NADSOFT%20Assignment.postman_collection.json) in the docs folder.
 
 ## Problem Solving Challenge
 

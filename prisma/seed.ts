@@ -1,8 +1,9 @@
 import { PrismaClient } from "@prisma/client";
-import { adminSeeder } from "./seeds/admin.seeder";
+import { adminSeeder } from "./seeds/admins.seeder";
+import { usersSeeder } from "./seeds/users.seeder";
 const prisma = new PrismaClient();
 
-const seeders = [adminSeeder];
+const seeders = [adminSeeder, usersSeeder];
 
 async function main() {
   for (const seeder of seeders) {

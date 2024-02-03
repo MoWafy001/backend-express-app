@@ -17,7 +17,9 @@ export class UserSerialization {
   country: string;
 
   @Expose({ name: "dateOfBirth" })
-  @Transform(({ value }) => (new Date()).getFullYear() - (new Date(value)).getFullYear())
+  @Transform(
+    ({ value }) => new Date().getFullYear() - (value as Date).getFullYear()
+  )
   age: number;
 
   @Expose({ name: "createdAt" })

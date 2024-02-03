@@ -9,8 +9,12 @@ import { AdminsService } from "../services/admins.service";
 import { CreateAdminRequest } from "../requests/create-admin.request";
 import { AdminSerialization } from "../../auth/serializers/admin.serialization";
 import { UpdateAdminRequest } from "../requests/update-admin.request";
+import { ControllerMiddleWare } from "../../../../lib/decorators/controller-middleware.decorator";
+import { AdminGuardMiddleware } from "../../auth/guards/admin-auth-guard";
+import { Role } from "../../../../common/enums/role.enum";
 
 @Prefix("/console/admins")
+@ControllerMiddleWare(AdminGuardMiddleware({ roles: [Role.SUPER_ADMIN] }))
 export class AdminsControllers extends BaseController {
   private adminsService: AdminsService = new AdminsService();
 

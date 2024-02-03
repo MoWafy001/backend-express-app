@@ -103,4 +103,4 @@ The endpoints and responses are included in [postman collection](./docs/NADSOFT%
 
 ## Problem Solving Challenge
 
-The solution is in the problem-solving folder.
+The [solution](./problem-solving/solution.md) is in the problem-solving folder.

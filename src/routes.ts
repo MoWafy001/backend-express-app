@@ -37,6 +37,8 @@ const setCustomRoutes = (router: Router) => {
       status: err.status || 500,
       message: err.message || "Internal Server Error",
     });
+
+    console.error(err.message, err.stack);
   });
 };
 

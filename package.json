@@ -2,7 +2,7 @@
   "name": "nadsoft-assignment-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "tsc && tsc-alias && node dist/index.js",
     "start:dev": "nodemon -r tsconfig-paths/register src/index.ts",

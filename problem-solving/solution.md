@@ -3,32 +3,37 @@
 ## Thought Process
 - A palindrome string is a string that reads the same forwards and backwards.
 - So to check if a string is a palindrome, we need to compare the two halves of the string.
-- If the string is of odd length, we can ignore the middle character.
-- we can loop from the start of the string to the middle of the string and compare the characters at the start and end of the string.
-- this can be done in `O(n)` time complexity. I will loop n/2 times but I will be index two characters at a time, so the time complexity is `O(n)`.
-- The space complexity is `O(1)` because I am not using any extra space.
-- I simpler approach would be to use a stack to reverse the string and compare while looping only once.
-- first step would be to fill the stack by looping through the first half of the string.
-- ignore the middle character if the string is of odd length.
-- then loop through the second half of the string and compare the characters with the characters in the stack.
-- if one character does not match, then the string is not a palindrome, and we don't need to continue looping.
-- this approach has a time complexity of `O(n)` and a space complexity of `O(n)`.
-- I will implement the first approach because it has a better space complexity.
+- We also need to ignore any non-alphanumeric characters and ignore the case of the characters.
+- one solution would be to reverse the string and compare it with the original string. But this would take `O(n)` space. and `O(2n)` time.
+- Another solution could be to loop through have the string and compare the characters at the start and end of the string. This would take `O(n)` time and `O(1)` space, but the non-alphanumeric characters and case sensitivity would need to be handled somehow.
+- A good solution would be to use a stack to reverse the string and compare while looping only once. This would take `O(n)` time and `O(n)` space. pretty good. 
+- Maybe a better solution would be to have 2 pointers, one at the start and one at the end. And loop through the string comparing the characters at the start and end of the string. This would take `O(n)` time and `O(1)` space since we are not using any extra space.
+- If a pointer meets a non-alphanumeric character, it should skip it and continue to the next character.
 
-## Pseudocode Solution
+## Pseudocode Solution (2 pointer approach)
 ```
-function isPalindromeString(s: string): boolean
-    n = s.length
-    for i = 0 to n/2
-        if s[i] != s[n-i-1]
-            return false
-    return true
+function isPalindrome(s: string): boolean
+  let start = 0
+  let end = s.length - 1
+  while start < end
+    if !isAlphanumeric(s[start])
+      start++
+      continue
+    if !isAlphanumeric(s[end])
+      end--
+      continue
+    if toLowerCase(s[start]) !== toLowerCase(s[end])
+      return false
+    start++
+    end--
+  return true
 ```
 
 ## Complexity Analysis
-The time complexity is `O(n)` because we loop through the string once and compare the characters at the start and end of the string.
-The space complexity is `O(1)` because we are not using any extra space.
+The time complexity of this approach is `O(n)` and the space complexity is `O(1)`.
 
-## Alternative Solutions
-An alternative solution would be to use a stack to reverse the string and compare while looping only once.
-The time complexity of this approach is `O(n)` and the space complexity is `O(n)`.
+## Alternative Solutions And Complexity Analysis
+- Using a stack to reverse the string and compare while looping only once. This would take `O(n)` time and `O(n)` space.
+- Reverse the string and compare it with the original string. This would take `O(n)` time and `O(2n)` space.
+- Loop through have the string and compare the characters at the start and end of the string. This would take `O(n)` time and `O(1)` space, but the non-alphanumeric characters and case sensitivity would need to be handled somehow. The 2 pointer approach is a better version of this solution.
+```

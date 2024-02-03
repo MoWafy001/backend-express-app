@@ -2,13 +2,9 @@ import "reflect-metadata";
 import express from "express";
 import cors from "cors";
 import { config } from "./configs/config";
-import { databaseInit } from "./database/data-source";
 import { setAppRoutes } from "./routes";
 
 const main = async () => {
-  // initialize database
-  await databaseInit();
-
   // set up express server
   const app = express();
 

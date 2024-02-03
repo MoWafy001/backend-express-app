@@ -1,3 +1,4 @@
+import memoization from "@lib/memoization-center/memoization";
 import {
   ValidatorConstraint,
   ValidatorConstraintInterface,
@@ -9,16 +10,18 @@ import {
 @ValidatorConstraint({ async: true })
 export class IsCountryConstraint implements ValidatorConstraintInterface {
   async validate(country: string, args: ValidationArguments) {
-    try {
-      const response = await fetch(
-        `https://restcountries.com/v3.1/name/${country}?fullText=true`
-      );
+    return memoization.memoize(`country-${country}`, async () => {
+      try {
+        const response = await fetch(
+          `https://restcountries.com/v3.1/name/${country}?fullText=true`
+        );
 
-      return response.ok;
-    } catch (error) {
-      console.error(error);
-      return false;
-    }
+        return response.ok;
+      } catch (error) {
+        console.error(error);
+        return false;
+      }
+    });
   }
 
   defaultMessage(args: ValidationArguments) {

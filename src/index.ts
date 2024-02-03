@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { config } from "@configs/config";
 import { setAppRoutes } from "./routes";
+import { loggerMiddleware } from "middlewares/logger.middleware";
 
 const main = async () => {
   // set up express server
@@ -12,6 +13,7 @@ const main = async () => {
   app.use(cors());
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
+  app.use(loggerMiddleware)
 
   // set up routes
   setAppRoutes(app);

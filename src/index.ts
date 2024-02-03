@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import express from "express";
 import cors from "cors";
-import { config } from "./configs/config";
+import { config } from "@configs/config";
 import { setAppRoutes } from "./routes";
 
 const main = async () => {

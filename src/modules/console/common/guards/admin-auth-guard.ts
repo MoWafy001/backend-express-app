@@ -1,18 +1,17 @@
 import { JwtPayload, verify } from "jsonwebtoken";
-import { config } from "../../../../configs/config";
-import { HttpError } from "../../../../lib/error-handling/http-error";
 import { Request } from "express";
-import { getCook } from "../../../../helpers/cookie";
-import { IJwtLoginPayload } from "../interfaces/jwt-login-payload.interface";
-import { Role } from "../../../../common/enums/role.enum";
+import { IJwtLoginPayload } from "@common/interfaces/jwt-login-payload.interface";
+import { getCook } from "@helpers/cookie";
+import { Role } from "@common/enums/role.enum";
+import { HttpError } from "@lib/error-handling/http-error";
+import { config } from "@configs/config";
 
 type AdminGuardMiddlewareProps = {
   roles?: Role[];
 };
 
 export const AdminGuardMiddleware =
-  ({ roles }: AdminGuardMiddlewareProps) =>
-  (req: Request, res, next) => {
+  (props?: AdminGuardMiddlewareProps) => (req: Request, res, next) => {
     // get token from cookie
     const token = getCook("token", req.headers.cookie);
     let payload: IJwtLoginPayload;
@@ -33,8 +32,8 @@ export const AdminGuardMiddleware =
     }
 
     // check roles
-    if (roles && roles.length > 0) {
-      if (!roles.includes(payload.role)) {
+    if (props?.roles && props?.roles.length > 0) {
+      if (!props.roles.includes(payload.role)) {
         throw new HttpError(401, "Unauthorized");
       }
     }

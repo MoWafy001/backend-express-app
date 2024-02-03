@@ -45,7 +45,15 @@ const setCustomRoutes = (router: Router) => {
 /* importing all controllers */
 
 const findControllerFiles = (): string[] => {
-  return glob.sync(`./**/*.controller.{ts,js}`, {}).map((file) => {
+  const controllersPath = path.join(
+    __dirname,
+    "modules",
+    "**",
+    "controllers",
+    "*.{ts,js}"
+  );
+  
+  return glob.sync(controllersPath, {}).map((file) => {
     return path.resolve(file);
   });
 };

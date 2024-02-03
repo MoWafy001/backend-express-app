@@ -1,12 +1,10 @@
 import {
   IsEmail,
-  IsIn,
   IsNotEmpty,
   IsString,
 } from "class-validator";
-import { Role } from "../../../../common/enums/role.enum";
 
-export class CreateAdminRequest {
+export class CreateUserRequest {
   @IsString()
   @IsNotEmpty()
   name: string;
@@ -17,7 +15,4 @@ export class CreateAdminRequest {
   @IsString()
   @IsNotEmpty()
   password: string;
-
-  @IsIn([Role.ADMIN])
-  role: Role;
 }

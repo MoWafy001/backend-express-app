@@ -6,29 +6,41 @@ import { HttpError } from "@lib/error-handling/http-error";
 import { validateHash } from "@lib/password/passwords";
 import { config } from "@configs/config";
 import { prisma } from "database/prisma";
+import { RegisterRequest } from "../requests/register.request";
 
-export class LoginService {
+export class AuthService {
   async login(loginRequest: LoginRequest) {
     const { email, password } = loginRequest;
 
-    const admin = await prisma.admin.findUnique({
+    const user = await prisma.user.findUnique({
       where: { email },
     });
 
-    if (!admin || !(await validateHash(password, admin.password)))
+    if (!user || !(await validateHash(password, user.password)))
       throw new HttpError(400, "Invalid Credentials");
 
     return {
-      admin,
-      token: this.signJWT(admin),
+      user,
+      token: this.signJWT(user),
     };
   }
 
-  signJWT(admin: Prisma.AdminGetPayload<{}>): string {
+  async register(registerRequest: RegisterRequest) {
+    const user = await prisma.user.create({
+      data: registerRequest,
+    });
+
+    return {
+      user,
+      token: this.signJWT(user),
+    };
+  }
+
+  signJWT(user: Prisma.UserGetPayload<{}>): string {
     const payload: IJwtLoginPayload = {
-      id: admin.uuid,
-      email: admin.email,
-      name: admin.name,
+      id: user.uuid,
+      email: user.email,
+      name: user.name,
       type: "user",
     };
 

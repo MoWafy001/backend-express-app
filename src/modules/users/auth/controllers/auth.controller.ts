@@ -7,12 +7,13 @@ import { JsonResponse } from "@lib/responses/json-response";
 import { serialize } from "@helpers/serialize";
 
 import { LoginRequest } from "../requests/login.request";
-import { LoginService } from "../services/login.service";
+import { AuthService } from "../services/auth.service";
 import { UserSerialization } from "@common/serializers/user.serialization";
+import { RegisterRequest } from "../requests/register.request";
 
 @ControllerPrefix("/users/auth")
 export class AuthController extends BaseController {
-  private loginService: LoginService = new LoginService();
+  private auth: AuthService = new AuthService();
 
   public setRoutes(): void {
     this.router.post("/login", asyncHandler(this.login));
@@ -20,9 +21,24 @@ export class AuthController extends BaseController {
 
   login = async (req: Request, res: Response) => {
     const loginRequest = validateRequest(LoginRequest, req.body);
-    const data = await this.loginService.login(loginRequest);
+    const data = await this.auth.login(loginRequest);
     const response = new JsonResponse({
-      data: serialize(data.admin, UserSerialization),
+      data: serialize(data.user, UserSerialization),
+    });
+
+    res.cookie("token", data.token, {
+      httpOnly: true,
+      sameSite: "strict",
+    });
+
+    return res.json(response);
+  };
+
+  register = async (req: Request, res: Response) => {
+    const registerRequest = validateRequest(RegisterRequest, req.body);
+    const data = await this.auth.register(registerRequest);
+    const response = new JsonResponse({
+      data: serialize(data.user, UserSerialization),
     });
 
     res.cookie("token", data.token, {

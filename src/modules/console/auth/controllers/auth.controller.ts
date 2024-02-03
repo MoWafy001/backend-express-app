@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
 import { BaseController } from "../../../../lib/controllers/controller.base";
-import { Prefix } from "../../../../lib/decorators/prefix.decorator";
+import { ControllerPrefix } from "../../../../lib/decorators/prefix.decorator";
 import { validateRequest } from "../../../../lib/error-handling/validate-request";
 import { LoginRequest } from "../requests/login.request";
 import { LoginService } from "../services/login.service";
@@ -9,7 +9,7 @@ import { serialize } from "../../../../helpers/serialize";
 import { AdminSerialization } from "../serializers/admin.serialization";
 import { JsonResponse } from "../../../../lib/responses/json-response";
 
-@Prefix("/console/auth")
+@ControllerPrefix("/console/auth")
 export class AuthController extends BaseController {
   private loginService: LoginService = new LoginService();
 

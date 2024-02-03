@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
 import { BaseController } from "../../../../lib/controllers/controller.base";
-import { Prefix } from "../../../../lib/decorators/prefix.decorator";
+import { ControllerPrefix } from "../../../../lib/decorators/prefix.decorator";
 import { validateRequest } from "../../../../lib/error-handling/validate-request";
 import { asyncHandler } from "../../../../helpers/async-handler";
 import { serialize } from "../../../../helpers/serialize";
@@ -9,12 +9,13 @@ import { AdminsService } from "../services/admins.service";
 import { CreateAdminRequest } from "../requests/create-admin.request";
 import { AdminSerialization } from "../../auth/serializers/admin.serialization";
 import { UpdateAdminRequest } from "../requests/update-admin.request";
-import { ControllerMiddleWare } from "../../../../lib/decorators/controller-middleware.decorator";
 import { AdminGuardMiddleware } from "../../auth/guards/admin-auth-guard";
 import { Role } from "../../../../common/enums/role.enum";
+import { ControllerMiddleware } from "../../../../lib/decorators/controller-middleware.decorator";
+import { parsePaginationQuery } from "../../../../helpers/parse-pagiantion-query";
 
-@Prefix("/console/admins")
-@ControllerMiddleWare(AdminGuardMiddleware({ roles: [Role.SUPER_ADMIN] }))
+@ControllerPrefix("/console/admins")
+@ControllerMiddleware(AdminGuardMiddleware({ roles: [Role.SUPER_ADMIN] }))
 export class AdminsControllers extends BaseController {
   private adminsService: AdminsService = new AdminsService();
 
@@ -37,10 +38,10 @@ export class AdminsControllers extends BaseController {
   };
 
   list = async (req: Request, res: Response) => {
-    const data = await this.adminsService.findMany({
-      take: req.query.take && parseInt(req.query.take as string),
-      skip: req.query.skip && parseInt(req.query.skip as string),
-    });
+    const data = await this.adminsService.findMany(
+      parsePaginationQuery(req.query)
+    );
+
     const response = new JsonResponse({
       data: serialize(data.data, AdminSerialization),
       meta: {

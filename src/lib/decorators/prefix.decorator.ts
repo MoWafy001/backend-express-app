@@ -1,6 +1,6 @@
 import { BaseController } from "../controllers/controller.base";
 
-export const Prefix = (prefix: string) => {
+export const ControllerPrefix = (prefix: string) => {
   return (target: typeof BaseController) => {
     const originalConstructor = target;
     const newConstructor: any = function (...args: any[]) {

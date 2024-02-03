@@ -5,7 +5,7 @@ import { BaseController } from "../controllers/controller.base";
  * @param prefix - The prefix to be added.
  * @returns A decorator function.
  */
-export const ControllerMiddleWare = (middleware: any) => {
+export const ControllerMiddleware = (middleware: any) => {
   return (target: typeof BaseController) => {
     const originalConstructor = target;
     const newConstructor: any = function (...args: any[]) {

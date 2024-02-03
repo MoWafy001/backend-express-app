@@ -6,7 +6,7 @@ import { getCook } from "../../../src/helpers/cookie";
 import { setAppRoutes } from "../../../src/routes";
 import cors from "cors";
 
-describe("AuthController", () => {
+describe("AdminsAuthController", () => {
   let app: Express;
 
   beforeAll(async () => {

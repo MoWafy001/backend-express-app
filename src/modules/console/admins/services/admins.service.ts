@@ -31,9 +31,6 @@ export class AdminsService {
       Prisma.AdminUncheckedUpdateInput
     >
   ) {
-    console.log(options);
-    
-
     attributes.password =
       attributes.password && hashPassword(attributes.password.toString());
 

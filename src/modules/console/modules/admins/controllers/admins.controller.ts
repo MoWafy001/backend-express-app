@@ -11,8 +11,8 @@ import { ControllerPrefix } from "@lib/decorators/prefix.decorator";
 import { validateRequest } from "@lib/error-handling/validate-request";
 import { JsonResponse } from "@lib/responses/json-response";
 import { serialize } from "@helpers/serialize";
-import { AdminGuardMiddleware } from "modules/console/common/guards/admin-auth-guard";
-import { AdminSerialization } from "modules/console/common/serializers/admin.serialization";
+import { AdminGuardMiddleware } from "src/modules/console/common/guards/admin-auth-guard";
+import { AdminSerialization } from "src/modules/console/common/serializers/admin.serialization";
 
 @ControllerPrefix("/console/admins")
 @ControllerMiddleware(AdminGuardMiddleware({ roles: [Role.SUPER_ADMIN] }))

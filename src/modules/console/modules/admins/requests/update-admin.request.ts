@@ -24,5 +24,5 @@ export class UpdateAdminRequest {
   
   @IsOptional()
   @IsIn([Role.ADMIN])
-  role: Role;
+  role?: Role;
 }

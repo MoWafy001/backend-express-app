@@ -27,6 +27,8 @@ model User {
   name      String
   password  String
   email     String   @unique
+  mobile    String   @unique
+  country   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

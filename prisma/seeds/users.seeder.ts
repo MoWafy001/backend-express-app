@@ -10,6 +10,8 @@ export const usersSeeder = async (prisma: PrismaClient) => {
         name: faker.person.fullName(),
         email: faker.internet.email(),
         password: hashPassword("password"),
+        mobile: faker.phone.number(),
+        country: faker.location.country(),
       },
     });
   }

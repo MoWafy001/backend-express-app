@@ -1,5 +1,6 @@
 import {
   IsEmail,
+  IsMobilePhone,
   IsNotEmpty,
   IsOptional,
   IsString,
@@ -19,4 +20,13 @@ export class UpdateUserRequest {
   @IsString()
   @IsNotEmpty()
   password?: string;
+
+  @IsOptional()
+  @IsMobilePhone()
+  mobile: string;
+
+  @IsOptional()
+  @IsString()
+  @IsNotEmpty()
+  country: string;
 }

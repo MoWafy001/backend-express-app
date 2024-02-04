@@ -45,14 +45,10 @@ const setCustomRoutes = (router: Router) => {
 /* importing all controllers */
 
 const findControllerFiles = (): string[] => {
-  const controllersPath = path.join(
-    __dirname,
-    "modules",
-    "**",
-    "controllers",
-    "*.{ts,js}"
-  );
-  
+  const controllersPath = path
+    .relative(process.cwd(), path.join(__dirname, "**/*.controller.{ts,js}"))
+    .replace(/\\/g, "/");
+
   return glob.sync(controllersPath, {}).map((file) => {
     return path.resolve(file);
   });
